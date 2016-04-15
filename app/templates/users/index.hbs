@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Streams</div>
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>URL</th>
+        <th>Live Video</th>
+        <th>Private</th>
+        <th>Cameras</th>
+        <th>Status</th>
+        <th>Start Date</th>
+      </tr>
+    </thead>
+      <tbody>
+        {{#each model.users as |user|}}
+        <tr>
+          <td>{{user.name}}</td>
+          <td>{{user.url}}</td>
+          <td>{{user.liveVideo}}</td>
+          <td>{{user.private}}</td>
+          <td>{{user.cameras}}</td>
+          <td>{{user.status}}</td>
+          <td>{{user.startDate}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+  </table>
+</div>
+{{#link-to "users.add" tagName="button" class="btn btn-primary"}}Add New User{{/link-to}}
