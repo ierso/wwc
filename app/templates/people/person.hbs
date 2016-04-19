@@ -1,0 +1,21 @@
+{{outlet}}
+<div class="container">
+  <ul>
+    <li>{{model.name}}</li>
+    <li>{{model.email}}</li>
+  </ul>
+  <button class="btn" {{action "editPerson"}}>Edit</button>
+
+  {{#if isEditing}}
+  <form {{action 'updatePerson' model on='submit' }}>
+
+    {{input type="text" name="name" value=model.name}}
+    {{input type="text" name="email" value=model.email}}
+    <button type="submit">Save</button>
+
+  </form>
+
+  {{else}}
+
+  {{/if}}
+</div>
