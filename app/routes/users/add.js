@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function(){
-    return this.store.peekAll('user');
+    return this.store.findAll('user');
 
   },
   actions: {
@@ -15,9 +15,14 @@ export default Ember.Route.extend({
         private: controller.private,
         cameras: controller.cameras,
         status: controller.status,
-        startDate: controller.startDate
+        startDate: controller.startDate,
       });
+
+      // newUser.save();
       // this.store.push(newUser);
+    },
+    deleteUser: function(user){
+
     }
   }
 });

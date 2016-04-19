@@ -23,6 +23,9 @@ Router.map(function() {
     this.route('user', { path: '/:user_id' });
     this.route('edit', { path: '/edit/:user_id' });
   });
+  this.route('people', function(){
+    this.route('person', {path: '/:id'});
+  });
 });
 
 export default Router;
