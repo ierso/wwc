@@ -7,7 +7,8 @@ export default Ember.Route.extend({
   },
   actions: {
     addPerson: function(){
-      var controller = this.get('controller');
+      Ember.Logger.log( this.controllerFor('people.index').name);
+      var controller = this.controllerFor('people.index');
       var newPerson = this.store.createRecord('person',{
         name: controller.name,
         email: controller.email
@@ -16,7 +17,9 @@ export default Ember.Route.extend({
     },
     removePerson: function(id){
       this.store.findRecord('person', id).then(function(person) {
-      person.destroyRecord();
+        person.deleteRecord();
+        person.get('isDeleted'); // => true
+        person.save(); // => DELETE to /posts/1
       });
     }
   }
