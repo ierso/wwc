@@ -15,12 +15,8 @@ export default Ember.Route.extend({
       });
       newPerson.save();
     },
-    removePerson: function(id){
-      this.store.findRecord('person', id).then(function(person) {
-        person.deleteRecord();
-        person.get('isDeleted'); // => true
-        person.save(); // => DELETE to /posts/1
-      });
+    removePerson: function(person){
+        person.destroyRecord();
     }
   }
 
