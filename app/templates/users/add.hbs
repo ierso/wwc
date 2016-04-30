@@ -1,1 +1,28 @@
 {{outlet}}
+
+
+<section id="add-user" class="container">
+  <div class="row">
+    <h2>Add User</h2>
+
+    <form {{action 'addUser' on='submit'}}>
+      <div class="form-group">
+        {{input type="text" class="form-control" id="first-name" placeholder="First Name" value=first}}
+      </div>
+      <div class="form-group">
+        {{input type="text" class="form-control" id="last-name" placeholder="Last Name" value=last}}
+      </div>
+      <div class="form-group">
+        {{input type="email" class="form-control" id="email" placeholder="Email" value=email}}
+      </div>
+      <div class="form-group">
+        {{input type="text" class="form-control" id="role" placeholder="Role" value=role}}
+      </div>
+      <div class="form-group">
+        {{input type="text" class="form-control" id="password" placeholder="Password" value=password}}
+      </div>
+
+      <button type="submit" name="button" class="btn btn-primary">Add User</button>
+    </form>
+  </div>
+</section>

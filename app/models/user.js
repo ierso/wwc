@@ -1,10 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  name: DS.attr(),
-  url: DS.attr(),
-  liveVideo: DS.attr(),
-  cameras: DS.attr(),
-  status: DS.attr(),
-  startDate: DS.attr()
+  email: DS.attr('string'),
+  first: DS.attr('string'),
+  last: DS.attr('string'),
+  role: DS.attr('string'),
+  password: DS.attr('string')
 });

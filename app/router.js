@@ -10,9 +10,7 @@ Router.map(function() {
     this.route('person', {path: '/:id'});
   });
   this.route('users', function() {
-    this.route('user', function() {
-      this.route('edit');
-    });
+    this.route('user', {path: '/:id'});
     this.route('add');
   });
   this.route('streams', function() {
